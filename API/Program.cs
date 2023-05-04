@@ -29,9 +29,7 @@ builder.Services.AddScoped<AuthService>();
 
 builder.Services.AddControllers(options =>
 {
-    options.Filters.Add<ExceptionFilter>();
-    options.Filters.Add<ResultFilter>();
-}).ConfigureApiBehaviorOptions(options => { options.SuppressModelStateInvalidFilter = true; }).AddJsonOptions(
+}).ConfigureApiBehaviorOptions(options => {  }).AddJsonOptions(
     options =>
     {
         options.JsonSerializerOptions.DefaultIgnoreCondition =
@@ -43,8 +41,9 @@ builder.Services.AddControllers(options =>
 
 // Configure CORS
 builder.Services.AddCors(options =>
-    options.AddDefaultPolicy(policy => {
-        policy.AllowAnyOrigin();
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins("http://localhost:5209");
         policy.AllowAnyHeader();
         policy.AllowAnyMethod();
     }));

@@ -1,0 +1,48 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+* {
+  transition: all .25s;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+main#content {
+  min-height: 100vh;
+}
+
+.card__title {
+  font-size: 1em;
+}
+
+.card__description {
+  font-size: .75em;
+}
+
+#card__playlist:hover > .card {
+  box-shadow: 0 0 18px rgba(33, 33, 33, .5);
+}
+
+#container__playlists > .col {}
+
+.text-description {
+  color: rgb(100,100,100);
+}

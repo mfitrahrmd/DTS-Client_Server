@@ -38,6 +38,7 @@ public class CoreController<TRepository, TPk, TEntity, TDTO, TInsertRequest, TUp
     [HttpPost]
     public async Task<IActionResult> PostAsync(TInsertRequest request)
     {
+        Console.WriteLine(request);
         var insertedEntity = await _repository.InsertOne(_mapper.Map<TEntity>(request));
 
         return Created("", _mapper.Map<TDTO>(insertedEntity));
